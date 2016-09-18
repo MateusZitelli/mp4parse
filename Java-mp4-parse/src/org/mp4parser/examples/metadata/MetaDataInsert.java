@@ -92,7 +92,8 @@ public class MetaDataInsert {
         }
         IsoFile isoFile = new IsoFile(videoFilePath);
 
-        MovieBox moov = isoFile.getBoxes(MovieBox.class).get(0);
+        // Get right moov box
+        MovieBox moov = isoFile.getBoxes(MovieBox.class).get(1);
        
         boolean correctOffset = needsOffsetCorrection(isoFile);
         long sizeBefore = moov.getSize();
